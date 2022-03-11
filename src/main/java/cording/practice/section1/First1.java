@@ -25,7 +25,7 @@ import java.util.Scanner;
  * c
  */
 
-public class FirstOne {
+public class First1 {
     public static int solution(String str, char t) {
         int answer = 0;
 
