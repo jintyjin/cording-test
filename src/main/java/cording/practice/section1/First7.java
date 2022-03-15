@@ -25,24 +25,20 @@ import java.util.Scanner;
 
 public class First7 {
     public static String solution(String str) {
-        String answer = "";
+        String answer = "YES";
 
-        String reverse = "";
-        for (int i = str.length() - 1; i >= 0; i--) {
-            reverse += str.charAt(i);
+        String tmp = new StringBuilder(str).reverse().toString();
+        if (!tmp.equalsIgnoreCase(str)) {
+            return "NO";
         }
 
-        if (str.equalsIgnoreCase(reverse)) {
-            answer = "YES";
-        } else {
-            answer = "NO";
-        }
-//        String reverse = new StringBuilder(str).reverse().toString();
+//        str = str.toUpperCase();
 //
-//        if (str.equalsIgnoreCase(reverse)) {
-//            answer = "YES";
-//        } else {
-//            answer = "NO";
+//        int len = str.length();
+//        for (int i = 0; i < len / 2; i++) {
+//            if (str.charAt(i) != str.charAt(len - 1 - i)) {
+//                return "NO";
+//            }
 //        }
 
         return answer;
