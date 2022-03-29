@@ -26,21 +26,20 @@ import java.util.Scanner;
  */
 
 public class First1 {
-    public static int solution(String str, char t) {
+    public static int solution(String str, char c) {
         int answer = 0;
 
         str = str.toUpperCase();
-        t = Character.toUpperCase(t);
+        c = Character.toUpperCase(c);
 
         for (char x : str.toCharArray()) {
-            if (x == t) {
+            if (x == c) {
                 answer++;
             }
         }
 
         return answer;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
