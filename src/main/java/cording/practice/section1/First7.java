@@ -27,26 +27,20 @@ public class First7 {
     public static String solution(String str) {
         String answer = "YES";
 
-        String tmp = new StringBuilder(str).reverse().toString();
-        if (!tmp.equalsIgnoreCase(str)) {
-            return "NO";
-        }
+        str = str.toUpperCase();
 
-//        str = str.toUpperCase();
-//
-//        int len = str.length();
-//        for (int i = 0; i < len / 2; i++) {
-//            if (str.charAt(i) != str.charAt(len - 1 - i)) {
-//                return "NO";
-//            }
-//        }
+        int len = str.length();
+        for (int i = 0; i < len / 2; i++) {
+            if (str.charAt(i) != str.charAt(len - 1 - i)) {
+                return "NO";
+            }
+        }
 
         return answer;
     }
-
     public static void main(String[] args){
-        Scanner in=new Scanner(System.in);
-        String str = in.next();
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
         System.out.println(solution(str));
     }
 }

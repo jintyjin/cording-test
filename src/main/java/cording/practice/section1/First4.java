@@ -26,34 +26,35 @@ import java.util.*;
  * giB
  */
 public class First4 {
-    public static ArrayList<String> solution(int n, String[] str) {
+    public static ArrayList<String> solution(int x, String[] arr) {
         ArrayList<String> answer = new ArrayList<>();
 
-        for (String x : str) {
-            char[] s = x.toCharArray();
-            int lt = 0, rt = x.length() - 1;
+        for (String str : arr) {
+            char[] ch = str.toCharArray();
+            int lt = 0;
+            int rt = str.length() - 1;
             while (lt < rt) {
-                char tmp = s[lt];
-                s[lt] = s[rt];
-                s[rt] = tmp;
+                char tmp = ch[lt];
+                ch[lt] = ch[rt];
+                ch[rt] = tmp;
                 lt++;
                 rt--;
             }
-            String tmp = String.valueOf(s);
+            String tmp = String.valueOf(ch);
             answer.add(tmp);
         }
+
         return answer;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        String[] str = new String[n];
-        for (int i = 0; i < n; i++) {
-            str[i] = sc.next();
+        int x = sc.nextInt();
+        String[] arr = new String[x];
+        for (int i = 0; i < x; i++) {
+            arr[i] = sc.next();
         }
-        for (String x : solution(n, str)) {
-            System.out.println(x);
+        for (String str : solution(x, arr)) {
+            System.out.println(str.toString());
         }
     }
 }

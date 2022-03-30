@@ -26,18 +26,18 @@ import java.util.Scanner;
  */
 public class First8 {
     public static String solution(String str) {
-        String answer = "NO";
-        str = str.toUpperCase().replaceAll("[^A-Z]", "");       // ^는 부정
-        String tmp = new StringBuilder(str).reverse().toString();
-        if (str.equals(tmp)) {
-            return "YES";
-        }
+        String answer = "YES";
 
-        System.out.println(str);
+        str = str.toUpperCase().replaceAll("[^A-Z]", "");
+        int len = str.length();
+        for (int i = 0; i < len / 2; i++) {
+            if (str.charAt(i) != str.charAt(len - 1 - i)) {
+                return "NO";
+            }
+        }
 
         return answer;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();

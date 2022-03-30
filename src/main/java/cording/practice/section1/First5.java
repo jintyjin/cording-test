@@ -24,22 +24,24 @@ import java.util.Scanner;
 public class First5 {
     public static String solution(String str) {
         String answer = "";
-        char[] s = str.toCharArray();
-        int lt = 0, rt = s.length - 1;
+
+        int lt = 0;
+        int rt = str.length() - 1;
+        char[] ch = str.toCharArray();
         while (lt < rt) {
-            if (!Character.isAlphabetic(s[lt])) {
+            if (!Character.isAlphabetic(ch[lt])) {
                 lt++;
-            } else if (!Character.isAlphabetic(s[rt])) {
+            } else if (!Character.isAlphabetic(ch[rt])) {
                 rt--;
             } else {
-                char tmp = s[lt];
-                s[lt] = s[rt];
-                s[rt] = tmp;
+                char tmp = ch[lt];
+                ch[lt] = ch[rt];
+                ch[rt] = tmp;
                 lt++;
                 rt--;
             }
         }
-        answer = String.valueOf(s);
+        answer = String.valueOf(ch);
 
         return answer;
     }

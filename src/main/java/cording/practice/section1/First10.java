@@ -1,5 +1,6 @@
 package cording.practice.section1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -23,35 +24,36 @@ import java.util.Scanner;
  */
 
 public class First10 {
-    public static int[] solution(String s, char t) {
-        int[] answer = new int[s.length()];
-        int p = 1000;
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == t) {
-                p = 0;
+    public static int[] solution(String str, char ch) {
+        int[] answer = new int[str.length()];
+
+        int n = 1000;
+        for (int i = 0; i < answer.length; i++) {
+            if (str.charAt(i) == ch) {
+                n = 0;
             } else {
-                p++;
+                n++;
             }
-            answer[i] = p;
+            answer[i] = n;
         }
 
-        p = 1000;
-
-        for (int i = s.length() - 1; i >= 0; i--) {
-            if (s.charAt(i) == t) {
-                p = 0;
+        n = 1000;
+        for (int i = answer.length - 1; i >= 0; i--) {
+            if (str.charAt(i) == ch) {
+                n = 0;
             } else {
-                p++;
-                answer[i] = Math.min(answer[i], p);
+                n++;
+                answer[i] = Math.min(answer[i], n);
             }
         }
+
         return answer;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
-        char c = sc.next().charAt(0);
-        for (int x : solution(str, c)) {
+        char ch = sc.next().charAt(0);
+        for (int x : solution(str, ch)) {
             System.out.print(x + " ");
         }
     }

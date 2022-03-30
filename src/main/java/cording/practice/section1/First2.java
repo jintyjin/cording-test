@@ -25,11 +25,12 @@ import java.util.Scanner;
 public class First2 {
     public static String solution(String str) {
         String answer = "";
+
         for (char x : str.toCharArray()) {
-            if (x >= 97 && x <= 122) {
-                answer += (char)(x - 32);
+            if (Character.isUpperCase(x)) {
+                answer += Character.toLowerCase(x);
             } else {
-                answer += (char)(x + 32);
+                answer += Character.toUpperCase(x);
             }
         }
 

@@ -53,35 +53,22 @@ import java.util.Scanner;
  */
 
 public class First12 {
-    public static String solution(int cnt, String str) {
+    public static String solution(int x, String str) {
         String answer = "";
 
-        for (int i = 0; i < cnt; i++) {
+        for (int i = 0; i < x; i++) {
             String tmp = str.substring(0, 7).replace('#', '1').replace('*', '0');
-            int num = Integer.parseInt(tmp, 2);
-            answer += (char)num;
+            answer += (char) Integer.parseInt(tmp, 2);
             str = str.substring(7);
         }
-
-//        for (int i = 0; i < cnt; i++) {
-//            String x = str.substring(i * 7, i * 7 + 7);
-//            x = x.replaceAll("#", "1").replaceAll("[*]", "0");
-//            int t = 0;
-//            for (int j = 0; j < x.length(); j++) {
-//                if (x.charAt(j) != '0') {
-//                    t += Math.pow(2, x.length() - 1 - j);
-//                }
-//            }
-//            answer += (char) t;
-//        }
 
         return answer;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int cnt = sc.nextInt();
+        int x = sc.nextInt();
         String str = sc.next();
-        System.out.println(solution(cnt, str));
+        System.out.println(solution(x, str));
     }
 }
