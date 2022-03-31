@@ -1,5 +1,6 @@
 package cording.practice.section2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -28,13 +29,13 @@ public class Second8 {
         int[] answer = new int[n];
 
         for (int i = 0; i < n; i++) {
-            int cnt = 1;
+            int grade = 1;
             for (int j = 0; j < n; j++) {
-                if (arr[i] < arr[j]) {
-                    cnt++;
+                if (arr[j] > arr[i]) {
+                    grade++;
                 }
             }
-            answer[i] = cnt;
+            answer[i] = grade;
         }
 
         return answer;
@@ -46,7 +47,6 @@ public class Second8 {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-
         for (int x : solution(n, arr)) {
             System.out.print(x + " ");
         }

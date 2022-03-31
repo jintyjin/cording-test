@@ -30,27 +30,31 @@ import java.util.Scanner;
 public class Second9 {
     public static int solution(int n, int[][] arr) {
         int answer = 0;
-        int sum1, sum2;
+
+        int x = 0;
+        int y = 0;
         for (int i = 0; i < n; i++) {
-            sum1 = sum2 = 0;
+            x = 0;
+            y = 0;
             for (int j = 0; j < n; j++) {
-                sum1 += arr[i][j];
-                sum2 += arr[j][i];
+                x += arr[i][j];
+                y += arr[j][i];
             }
-            answer = Math.max(answer, sum1);
-            answer = Math.max(answer, sum2);
+            answer = Math.max(answer, x);
+            answer = Math.max(answer, y);
         }
-        sum1 = sum2 = 0;
+
+        x = 0;
+        y = 0;
         for (int i = 0; i < n; i++) {
-            sum1 += arr[i][i];
-            sum2 += arr[i][n - i - 1];
+            x += arr[i][i];
+            y += arr[i][n - 1 - i];
         }
-        answer = Math.max(answer, sum1);
-        answer = Math.max(answer, sum2);
+        answer = Math.max(answer, x);
+        answer = Math.max(answer, y);
 
         return answer;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

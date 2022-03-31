@@ -39,29 +39,30 @@ public class Second3 {
 
         for (int i = 0; i < n; i++) {
             if (arrA[i] == arrB[i]) {
-                answer += "D";
+                answer += 'D';
             } else if (arrA[i] == 1 && arrB[i] == 3) {
-                answer += "A";
+                answer += 'A';
             } else if (arrA[i] == 2 && arrB[i] == 1) {
-                answer += "A";
+                answer += 'A';
             } else if (arrA[i] == 3 && arrB[i] == 2) {
-                answer += "A";
+                answer += 'A';
             } else {
-                answer += "B";
+                answer += 'B';
             }
         }
 
         return answer;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] arrA = new int[n];
         int[] arrB = new int[n];
+
         for (int i = 0; i < n; i++) {
             arrA[i] = sc.nextInt();
         }
+
         for (int i = 0; i < n; i++) {
             arrB[i] = sc.nextInt();
         }

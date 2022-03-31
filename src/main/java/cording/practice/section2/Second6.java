@@ -27,32 +27,28 @@ import java.util.Scanner;
  */
 
 public class Second6 {
-    public static boolean isPrime(int num) {
-        if (num == 1) {
+    public static boolean isPrime(int tmp) {
+        if (tmp < 2) {
             return false;
         }
-
-        for (int i = 2; i < num; i++) {
-            if (num % i == 0) {
+        for (int i = 2; i < tmp; i++) {
+            if (tmp % i == 0) {
                 return false;
             }
         }
-
         return true;
     }
-
     public static ArrayList<Integer> solution(int n, int[] arr) {
         ArrayList<Integer> answer = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            int tmp = arr[i];
-            int res = 0;
-            while (tmp > 0) {
-                int t = tmp % 10;
-                res = res * 10 + t;
-                tmp = tmp / 10;
+
+        for (int x : arr) {
+            int tmp = 0;
+            while (x > 0) {
+                tmp = tmp * 10 + x % 10;
+                x = x / 10;
             }
-            if (isPrime(res)) {
-                answer.add(res);
+            if (isPrime(tmp)) {
+                answer.add(tmp);
             }
         }
 

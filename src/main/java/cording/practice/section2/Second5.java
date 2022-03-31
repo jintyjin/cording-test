@@ -1,5 +1,6 @@
 package cording.practice.section2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -25,13 +26,15 @@ import java.util.Scanner;
 public class Second5 {
     public static int solution(int n) {
         int answer = 0;
-        int[] ch = new int[n + 1];
-        for (int i = 2; i <= n; i++) {
-            if (ch[i] == 0) {
+
+        int[] arr = new int[n + 1];
+
+        for (int i = 2; i < n + 1; i++) {
+            if (arr[i] == 0) {
                 answer++;
-                for (int j = i; j <= n; j=j+i) {
-                    ch[j] = 1;
-                }
+            }
+            for (int j = i; j < n + 1; j += i) {
+                arr[j] = 1;
             }
         }
 

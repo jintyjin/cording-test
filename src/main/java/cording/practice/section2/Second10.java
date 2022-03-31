@@ -39,29 +39,28 @@ public class Second10 {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                boolean flag = true;
+                boolean isTrue = true;
                 for (int k = 0; k < 4; k++) {
-                    int nx = i + dx[k];
-                    int ny = j + dy[k];
-                    if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]) {
-                        flag = false;
-                        break;
+                    if ((i + dx[k]) >= 0 && (i + dx[k]) < n && (j + dy[k]) >= 0 && (j + dy[k]) < n) {
+                        if (arr[i][j] <= arr[i + dx[k]][j + dy[k]]) {
+                            isTrue = false;
+                            break;
+                        }
                     }
                 }
-                if (flag) {
+                if (isTrue) {
                     answer++;
                 }
             }
         }
-
         return answer;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[][] arr = new int[n][n];
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j < n; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
                 arr[i][j] = sc.nextInt();
             }
         }

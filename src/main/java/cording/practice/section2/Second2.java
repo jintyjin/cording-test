@@ -24,20 +24,18 @@ import java.util.Scanner;
  */
 public class Second2 {
     public static int solution(int n, int[] arr) {
-        int answer = 0;
+        int answer = 1;
 
-        int x = 0;
-
-        for (int i = 0; i < n; i++) {
-            if (arr[i] > x) {
+        int tmp = arr[0];
+        for (int i = 1; i < n; i++) {
+            if (arr[i] > tmp) {
+                tmp = arr[i];
                 answer++;
-                x = arr[i];
             }
         }
 
         return answer;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
