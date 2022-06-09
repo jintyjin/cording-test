@@ -21,7 +21,7 @@ class People implements Comparable<People> {
         }
     }
 }
-public class ninth3 {
+public class Ninth3 {
     public static int solution(ArrayList<People> arr) {
         int cnt = 0;
         int answer = 0;

@@ -19,7 +19,7 @@ class Body implements Comparable<Body>{
     }
 }
 
-public class ninth1 {
+public class Ninth1 {
     public static int solution(ArrayList<Body> arr, int n) {
         int cnt = 0;
         int max = Integer.MIN_VALUE;

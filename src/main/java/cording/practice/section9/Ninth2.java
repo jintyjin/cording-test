@@ -23,7 +23,7 @@ class Time implements Comparable<Time> {
     }
 }
 
-public class ninth2 {
+public class Ninth2 {
     public static int solution(ArrayList<Time> arr, int answer) {
         int cnt = 0;
         Collections.sort(arr);
